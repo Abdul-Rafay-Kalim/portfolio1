@@ -1,0 +1,373 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
+  border-bottom: 2px solid var(--primary);
+  /* For dark mode, ensure border is visible */
+}
+
+header button,
+header nav ul li a {
+  background: var(--primary);
+  color: #fff !important;
+  border: none;
+}
+
+header button:hover,
+header nav ul li a:hover {
+  background: #003f6b;
+  color: #fff !important;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --primary: #005fa3; /* dark blue for nav/header */
+  --heading: #0078d7; /* lighter blue for headings */
+  --header-bg: #222222;
+  --header-text: #ffffff;
+  --border: #dddddd;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+html.dark {
+  --bg: #111111;
+  --text: #eeeeee;
+  --primary: #005fa3;  /* darker blue for nav/header */
+  --heading: #005fa3;  /* brighter blue for headings in dark mode */
+  --header-bg: #000000;
+  --header-text: #ffffff;
+  --border: #444444;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+main section {
+  margin-bottom: 50px;
+}
+
+.section-underline {
+  width: 60px;
+  height: 4px;
+  background: #0078d7;
+  margin: 0 auto 12px auto; /* 12px gap below underline */
+  border-radius: 2px;
+}
+
+section h2 {
+  margin-bottom: 0;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* Add space above subheadings (like h3) */
+.card-large h3,
+.project-card h3 {
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+ul {
+  list-style: square inside;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 20px;
+}
+
+a {
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: underline;
+} 
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 35px;
+  justify-content: center;
+}
+
+.cards-three {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.cards-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.card img {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 50px;
+  height: 50px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.project-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.card-large {
+  background: var(--bg);
+  color: var(--text);
+  border: 2px solid var(--primary);
+  border-radius: 18px;
+  padding: 32px 32px 24px 32px;
+  width: 100%;
+  max-width: 700px;
+  min-height: 220px;
+  margin: 0 auto 32px auto;
+  box-shadow: 0 6px 24px var(--shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-large:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 12px 32px var(--shadow);
+}
+
+.card-large h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.card-large p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.card-large button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 28px;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 32px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px var(--shadow);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+/* Smooth fade-in transition */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-large button:hover,
+.card-large button:focus {
+  background: #005fa3;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+html.dark .card-large button {
+  background: #222222;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+html.dark .card-large button:hover,
+html.dark .card-large button:focus {
+  background: #111111;
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .cards-three {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large {
+    max-width: 98vw;
+    padding: 20px 8px 16px 8px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 5px;
+  }
+}
+
+/* Add this to your main CSS file */
+.cta-box {
+  background: linear-gradient(300deg, #21289f, #9a370c);
+  color: #000000;
+  text-align: center;
+  padding: 60px 30px; 
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.cta-box h2 {
+  color: #000000;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.cta-box p {
+  color: #000000;
+  font-size: 1.1em;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.cta-box button {
+  background: linear-gradient(300deg, #011ded, #ac4b1e);
+  color: #000000;
+  border: none;
+  padding: 15px 30px; 
+  font-size: 1em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-box button:hover {
+  background: #e0e0e0;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toggle Test</title>
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #000;
+    }
+
+    html.dark {
+      --bg: #111;
+      --text: #eee;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Theme Toggle Test</h1>
+  <button id="theme-toggle">🌙</button>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      toggleBtn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
